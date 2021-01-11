@@ -1,0 +1,285 @@
+$width: 50px;
+$height: 50px;
+$font: normal normal normal 12px ;
+$baseAddress: "../images/socialmedia/" ;
+$transitionMS: 400ms;
+@mixin transition($transition...) {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+}
+.footer {
+  padding-bottom: 40px;
+  margin-top: 100px;
+  background-color: $grayColor;
+  .contact {
+    @media #{$small},#{$xsmall} {
+      box-shadow: #292929 3px 12px 1px, rgba(0,0,0,.12) 0 1px 4px;
+    }
+    box-shadow: #292929 7px 12px 1px, rgba(0,0,0,.12) 0 1px 4px;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 30px;
+    background-color: $drakGreen;
+    padding: 30px;
+    @media #{$small},#{$xsmall} {
+      display: block !important;
+    }
+    .newsletter_img {
+      width: 50px;
+      height: 50px;
+      @media #{$small},#{$xsmall} {
+        display: none;
+
+      }
+    }
+    span {
+      padding: 10px;
+      color: white;
+      @media #{$small},#{$xsmall} {
+        font-size: 1rem;
+      }
+    }
+    .form-group {
+      position: relative;
+      margin: 2px 0;
+      @media #{$small},#{$xsmall} {
+        margin: 10px 0;
+      }
+
+      @include placeholderColor(black);
+      input {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        @include radius(5px);
+        border: none;
+        @include rtlPlaceholder();
+
+      }
+      #email {
+        text-align: left;
+        padding-left: 32px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+
+    }
+    .subscribe {
+      z-index: 2;
+      width: 170px;
+      height: 40px;
+      margin: 3px 20px;
+      padding: 5px 25px;
+      background-color: $lightGreen;
+      color: white;
+      font-weight: bold;
+      @include radius(5px);
+      border: none;
+      position: relative;
+      display: inline-block;
+      letter-spacing: 1px;
+      transition: all 0.3s ease 0s;
+      letter-spacing: 1px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        transition: all 0.3s ease 0s;
+        background-color: #f2f2f2!important;
+        height: 0; left: 0; top: 0; right: 0;
+        border-radius: 5px;
+      }
+      &:hover,
+      &:focus {
+        color: #f8f8f8 !important;
+        background-color: transparent !important;
+      }
+      &:hover:after,
+      &:focus:after{
+        //content: "اشتراک در خبرنامه";
+        //text-align: center;
+        //padding: 5px 25px;
+        z-index: -2;
+        background-color: #2b611f !important;
+        height: 100%;
+      }
+
+    }
+    .input-container{
+      @media #{$medium},#{$large},#{$xlarge} {
+        width: 600px;
+
+      }
+
+    }
+  }
+  .triangle {
+    position: absolute;
+    top: 0px;
+    right: -24px;
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: solid 20px $lightGreen;
+    border-left: solid 12px $lightGreen;
+    border-right: solid 12px transparent;
+    border-top: solid 20px transparent;
+    @media #{$small},#{$xsmall} {
+      border-left: solid 6px $lightGreen;
+      border-right: solid 6px transparent;
+      right: -12px;
+
+
+    }
+  }
+  .icon-container {
+    text-align: center;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    @media #{$small},#{$xsmall} {
+    img{
+      width: 50px;
+      height: 50px;
+    }
+    }
+    .info-icon {
+      padding: 20px;
+      color: white;
+      p{
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+
+      }
+      .address{
+        padding: 15px 50px;
+        @media #{$small},#{$xsmall} {
+          padding: 0;
+
+        }
+        text-align: justify;
+      }
+    }
+
+  }
+  .bottom{
+    border-top: 2px solid $borderColor;
+    .sotialmedia {
+      padding: 1px;
+      padding-top: 0;
+      ul {
+        padding-top: 0;
+        position: relative;
+        li {
+          text-align: center;
+          color: white;
+          width: 55px;
+          height: 55px;
+          border: 2px solid $borderColor;
+          border-top: 3px solid $borderColor;
+          margin-left: -2px;
+          margin-top: -2px;
+        }
+      }
+      .icon-hover {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        width: $width;
+        height: $height;
+        line-height: $height;
+        overflow: hidden;
+        &:before, &:after {
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          top: 12%;
+          bottom: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: $height;
+          @include transition(top $transitionMS);
+        }
+        &.twitter:before {
+          font: $font;
+          content: url($baseAddress + 'twitter.png') ;
+          line-height: $height;
+        }
+        &.twitter:after {
+          font: $font;
+          content: url($baseAddress + 'hovertwitter.png');
+          line-height: $height;
+        }
+        &.facebook:before {
+          font: $font;
+          content: url($baseAddress + 'facebook.png') ;
+          line-height: $height;
+        }
+        &.facebook:after {
+          font: $font;
+          content: url($baseAddress + 'hoverfacebook.png');
+          line-height: $height;
+        }
+        &.instagram:before {
+          font: $font;
+          content: url($baseAddress + 'instagram.png') ;
+          line-height: $height;
+        }
+        &.instagram:after {
+          font: $font;
+          content: url($baseAddress + 'hoverinstagram.png');
+          line-height: $height;
+        }
+        &.linkdin:before {
+          font: $font;
+          content: url($baseAddress + 'linkedin.png') ;
+          line-height: $height;
+        }
+        &.linkdin:after {
+          font: $font;
+          content: url($baseAddress + 'hoverlinkedin.png');
+          line-height: $height;
+        }
+
+      }
+      .top {
+        @extend .icon-hover;
+        &:after {
+          top: 100%;
+        }
+        &:hover {
+          &:before {
+            top: -100%;
+          }
+          &:after {
+            top: 12%;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

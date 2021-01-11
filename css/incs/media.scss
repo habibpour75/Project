@@ -1,0 +1,19 @@
+$screen-xsmall-max: 639px;
+$screen-small-min: 640px;
+$screen-small-max:959px;
+$screen-medium-min: 960px;
+$screen-medium-max: 1199px;
+$screen-large-min:1200px;
+$screen-large-max:1599px;
+$screen-xlarge-min: 1600px;
+/********************************************************/
+$xsmall: "(max-width: #{$screen-xsmall-max})";
+$small: "(min-width: #{$screen-small-min}) and (max-width: #{$screen-small-max})";
+$xtosmall: "(max-width: #{$screen-small-max})";
+$medium: "(min-width: #{$screen-medium-min}) and (max-width: #{$screen-medium-max})";
+$large: "(min-width: #{$screen-large-min}) and (max-width: #{$screen-large-max})";
+$xlarge: "(min-width: #{$screen-xlarge-min})";
+$portrait: "(orientation : portrait)";
+$landscape: "(orientation : landscape)";
+/********************************************************/
+//@media #{$xlarge},#{$small} {}

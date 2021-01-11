@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'iran_sans';
+  src: url('fonts/iran_sans/iran_sans.eot') format('opentype');
+  src: local('☺'),
+  local('iran_sans'),
+  url('fonts/iran_sans/iran_sans.woff') format('woff'),
+  url('fonts/iran_sans/iran_sans.ttf') format('truetype'),
+  url('fonts/iran_sans/iran_sans.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin iranSans {
+  font-family: 'iran_sans' !important;
+}

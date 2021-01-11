@@ -1,0 +1,155 @@
+
+ul {
+  direction: rtl;
+}
+
+.sectionTitle {
+  width: 150px;
+  margin: 50px auto;
+  border-bottom: 2px solid $greenColor;
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.services {
+  padding-top: 50px;
+  @media #{$small},#{$xsmall}  {
+    display: none;
+  }
+  position: relative;
+  .service {
+    margin-bottom: 50px;
+    position: relative;
+
+    &.activeSlide {
+
+      .rotatedBorder {
+         opacity: 1;
+         transform: rotate(45deg);
+         border: 10px solid $borderColor;
+         opacity: 1;
+       }
+      .more {
+        display: none;
+        @include transition(0.3s);
+      }
+      .info-container {
+        @include transition(0.3s);
+        display: block;
+      }
+    }
+
+
+    &:hover {
+      .rotatedBorder {
+        opacity: 1;
+        transform: rotate(45deg);
+
+        border: 10px solid $borderColor;
+        opacity: 1;
+      }
+      .more {
+        display: none;
+        @include transition(0.3s);
+      }
+      .info-container {
+        @include transition(0.3s);
+        display: block;
+      }
+
+    }
+    .info-container {
+      position: absolute;
+      top: 100px;
+      right: 15px;
+      @include transition(2s);
+      display: none;
+      text-align: justify !important;
+      .title {
+        font-size: 1.5rem;
+        color: $grayColor;
+        padding-bottom: 10px;
+      }
+      .text {
+        line-height: 1.2rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    }
+
+  }
+}
+
+.services_smallview {
+  @media #{$large},#{$medium},#{$xlarge} {
+    display: none;
+
+  }
+  .more {
+    display: none;
+
+  }
+  .activeSlide {
+    .rotatedBorder {
+      opacity: 1;
+      @include transition(0.3s);
+      left: calc(50% - 60px);
+      transform: rotate(45deg) !important;
+      border: 10px solid $borderColor;
+      opacity: 1;
+    }
+
+
+  }
+  .slider-items {
+    padding-top: 50px !important;
+  }
+  .info-small {
+    padding: 50px 30px 20px 30px;
+    p {
+      text-align: justify;
+    }
+  }
+
+}
+
+.rotatedBorder {
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  top: -26px;
+  left: calc(50% - 80px);
+  border: 10px solid $borderColor;
+  @include transition(0.3s);
+  opacity: 0;
+}
+
+.more {
+  @include transition(2s);
+  width: 100px;
+  text-align: center;
+  margin: 25px auto;
+  display: block;
+  background-color: $grayColor;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.service-icon {
+
+  text-align: center;
+  img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+
+
+

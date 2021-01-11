@@ -1,0 +1,79 @@
+@import "./fonts/fonts";
+//==============
+
+@import "./uikit/uikit-rtl.min.css";
+
+//##############
+@import "./incs/variables";
+@import "./incs/effects";
+@import "./incs/media";
+@import "./incs/mixins";
+@import "./incs/uikit-extend";
+//==============
+@import "common/footer";
+@import "pages/home/section1";
+@import "pages/home/section2";
+@import "pages/home/section3";
+@import "pages/home/section4";
+@import "pages/home/section5";
+//==============
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  @include iranSans;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  @include iranSans;
+}
+button{
+  @include iranSans;
+}
+input{
+    @include iranSans;
+}
+p {
+  margin: 0 !important;
+}
+input:-moz-placeholder {
+  text-align: right;
+}
+input:-ms-input-placeholder {
+  text-align: right;
+}
+input::-webkit-input-placeholder {
+  text-align: right;
+}
+
+

@@ -1,0 +1,45 @@
+.sliding-middle-out {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1px;
+  &:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+
+    }
+  }
+}
+
+//========================
+.sliding-u-r-l {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+//========================

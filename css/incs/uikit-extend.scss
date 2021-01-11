@@ -1,0 +1,26 @@
+.uk-flex-order-last-xsmall {
+  -ms-flex-order: 99;
+  -webkit-order: 99;
+  order: 99;
+}
+
+.uk-visible-xlarge {
+  @media #{$large} {
+    display: none !important;
+  }
+  @media #{$medium} {
+    display: none;
+  }
+  @media #{$small} {
+    display: none;
+  }
+  @media #{$xsmall} {
+    display: none;
+  }
+}
+
+.uk-hidden-xlarge {
+  @media #{$xlarge} {
+    display: none !important;
+  }
+}
